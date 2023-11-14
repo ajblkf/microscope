@@ -26,6 +26,7 @@ func main () {
 
 		if len(arg) > 0 && arg[0] == '-' {
 			currentFlag = arg
+			argMap[currentFlag] = nil
 		} else {
 			argMap[currentFlag] = append(argMap[currentFlag], arg)
 		}
