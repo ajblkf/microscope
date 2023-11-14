@@ -105,7 +105,7 @@ func (this *Database) CheckPackage (pkg pkgscan.Package) (*pkgscan.Vulnerability
 	this.ensure()
 	if this.Packages == nil { return nil, nil }
 	
-	versions, vulnerable := this.Packages[pkg.String()]
+	versions, vulnerable := this.Packages[pkg.Name]
 	if !vulnerable { return nil, nil }
 	for _, entry := range versions {
 		if entry.matches(pkg) {
